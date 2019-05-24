@@ -65,6 +65,10 @@
         {
             "id": "12",
             "name": "PushedIceBlock"
+        },
+        {
+            "id": "13",
+            "name": "haveBook"
         }
     ],
     "backgrounds": [
@@ -921,7 +925,34 @@
                     "movementType": "faceInteraction",
                     "direction": "down",
                     "moveSpeed": "1",
-                    "animSpeed": "3"
+                    "animSpeed": "3",
+                    "script": [
+                        {
+                            "id": "f20e55a4-cb0b-4dfb-8d92-ced6623a73ff",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": "ÄÇÌéÒÐ÷ÂîÒÕÁëÏ"
+                            }
+                        },
+                        {
+                            "id": "b3fcbc08-7b21-4df9-b16d-c1b7776d0a84",
+                            "command": "EVENT_SET_TRUE",
+                            "args": {
+                                "variable": "13"
+                            }
+                        },
+                        {
+                            "id": "ac00b248-700f-4467-b8c4-16b5d688d999",
+                            "command": "EVENT_ACTOR_HIDE",
+                            "args": {
+                                "actorId": "2384aa89-4e81-47d6-b92c-73064e48aebc"
+                            }
+                        },
+                        {
+                            "id": "cc3ab540-da5f-4ade-9f87-7575cd7586d5",
+                            "command": "EVENT_END"
+                        }
+                    ]
                 },
                 {
                     "id": "9603b702-aa07-4ad7-8906-16112f308854",
@@ -988,6 +1019,27 @@
             ],
             "triggers": [
                 {
+                    "id": "88825490-1866-44c9-9157-c25712e37d07",
+                    "x": 3,
+                    "y": 4,
+                    "width": 2,
+                    "height": 1,
+                    "trigger": "walk",
+                    "script": [
+                        {
+                            "id": "0f543ea0-4712-43c5-aecc-da36e6037e63",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": "YoutubeîßÒÁêÚÞÙÔÁ"
+                            }
+                        },
+                        {
+                            "id": "cc3ab540-da5f-4ade-9f87-7575cd7586d5",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
                     "x": 9,
                     "y": 16,
                     "width": 2,
@@ -1004,6 +1056,11 @@
                                 "direction": "down",
                                 "fadeSpeed": "2"
                             }
+                        },
+                        {
+                            "id": "4165c207-7edc-4382-8fe6-b4d3c887efb3",
+                            "command": "EVENT_MUSIC_STOP",
+                            "args": {}
                         },
                         {
                             "id": "f49f1e60-9513-4486-9d3b-6f86d1baa938",
@@ -1169,11 +1226,11 @@
                                     "id": "a5dddc76-e5fe-424a-9b2b-1ad1834acefb",
                                     "command": "EVENT_SWITCH_SCENE",
                                     "args": {
-                                        "sceneId": "94c18861-b352-4f49-a64d-52f2e3415077",
-                                        "x": 27,
-                                        "y": 26,
-                                        "direction": "left",
-                                        "fadeSpeed": "4"
+                                        "sceneId": "1b7f9ffd-2bbb-470b-9189-c2ac435d2a55",
+                                        "x": 9,
+                                        "y": 6,
+                                        "direction": "down",
+                                        "fadeSpeed": "1"
                                     }
                                 },
                                 {
