@@ -69,6 +69,14 @@
         {
             "id": "13",
             "name": "haveBook"
+        },
+        {
+            "id": "14",
+            "name": "checkDoctor"
+        },
+        {
+            "id": "15",
+            "name": "sendPrescription"
         }
     ],
     "backgrounds": [
@@ -652,6 +660,62 @@
             "height": 18,
             "actors": [
                 {
+                    "id": "a1dab538-b2a2-43e7-b8b5-3393db332c95",
+                    "spriteSheetId": "f0c3033d-e82a-407d-9fe2-3d5da4f59c09",
+                    "x": 4,
+                    "y": 12,
+                    "movementType": "faceInteraction",
+                    "direction": "down",
+                    "moveSpeed": "1",
+                    "animSpeed": "3",
+                    "script": [
+                        {
+                            "id": "bee3480b-8179-4b5f-b71f-2aa914169713",
+                            "command": "EVENT_IF_TRUE",
+                            "args": {
+                                "variable": "14"
+                            },
+                            "true": [
+                                {
+                                    "id": "c5430e16-d395-423e-bd0b-1976821e29e4",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                        "text": "ã¿Æ÷ÇÕË÷ÝÂÍïîÄÇéÞÌ"
+                                    }
+                                },
+                                {
+                                    "id": "54767100-eff7-48af-a18e-40944023e092",
+                                    "command": "EVENT_SET_TRUE",
+                                    "args": {
+                                        "variable": "15"
+                                    }
+                                },
+                                {
+                                    "id": "18cf9299-11f4-4fe6-889e-e31ca5932dc7",
+                                    "command": "EVENT_END"
+                                }
+                            ],
+                            "false": [
+                                {
+                                    "id": "554f8c21-91dd-4f5c-b55b-addabe64b906",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                        "text": "ã¿Æ÷ÇÕË÷ÝÂÍïîÄÇêÉÓ"
+                                    }
+                                },
+                                {
+                                    "id": "e77e6829-6f9c-4529-9c7b-380bcb412f68",
+                                    "command": "EVENT_END"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cc3ab540-da5f-4ade-9f87-7575cd7586d5",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
                     "id": "5aa3ca8b-31c6-444a-9c94-9f25cdf41938",
                     "spriteSheetId": "e9e61bf7-88fd-491d-ae01-4b7f76909108",
                     "x": 4,
@@ -685,28 +749,14 @@
                             "id": "353bee92-fd23-468b-bf09-99a098d1629d",
                             "command": "EVENT_TEXT",
                             "args": {
-                                "text": "It's dangerous to\ngo without docs."
-                            }
-                        },
-                        {
-                            "id": "3f4b8292-f024-47fb-955d-f7f99a08415e",
-                            "command": "EVENT_TEXT",
-                            "args": {
-                                "text": "Check out\ngbstudio.dev/docs"
-                            }
-                        },
-                        {
-                            "id": "89023ce1-b504-48b3-b0af-9cec0b868bb0",
-                            "command": "EVENT_TEXT",
-                            "args": {
-                                "text": "Also, try moving\nthe rock outside."
+                                "text": "ÄÇÌéË÷ÝÂËÞÌ×ûÄÏøÁË"
                             }
                         },
                         {
                             "id": "ac4ebd76-c81c-4f85-91f9-29cef760538c",
                             "command": "EVENT_SET_TRUE",
                             "args": {
-                                "variable": "7"
+                                "variable": "14"
                             }
                         },
                         {
@@ -816,7 +866,21 @@
                             "id": "e2def9ee-3c5c-42fb-90e2-c6d073d97d9b",
                             "command": "EVENT_TEXT",
                             "args": {
-                                "text": "Add sprites to\nassets/sprites"
+                                "text": "Ë÷ÝÂÍïîã¿Æ÷ÇÕÄÇêÉÓ"
+                            }
+                        },
+                        {
+                            "id": "6cefe5a1-c289-4b01-b8e6-6d9667a0b440",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": "ã¿Æ÷ÇÒøÞÏÌøÕÄÇÌéîâ"
+                            }
+                        },
+                        {
+                            "id": "2f33b002-ad80-481f-b07f-0f02a235120d",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": "Ë÷ÝÂÍïîÄÇèÔÁÓÈøüàÄ"
                             }
                         },
                         {
@@ -1313,7 +1377,39 @@
                     "movementType": "faceInteraction",
                     "direction": "down",
                     "moveSpeed": "0",
-                    "animSpeed": "3"
+                    "animSpeed": "3",
+                    "script": [
+                        {
+                            "id": "37d20a1d-bc05-4503-8b35-493373b6c8ed",
+                            "command": "EVENT_IF_TRUE",
+                            "args": {
+                                "variable": "14"
+                            },
+                            "true": [
+                                {
+                                    "id": "51b32342-f03b-4531-9f79-13190a5cfbd9",
+                                    "command": "EVENT_END"
+                                }
+                            ],
+                            "false": [
+                                {
+                                    "id": "50be8214-6fa6-4eb5-a024-ddde48f7501a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                        "text": "Úø÷ÂÁïÒøÄÁËõÊïÕßÒâ"
+                                    }
+                                },
+                                {
+                                    "id": "bfd2d519-a775-4466-b1a3-ffdc366ec9c0",
+                                    "command": "EVENT_END"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cc3ab540-da5f-4ade-9f87-7575cd7586d5",
+                            "command": "EVENT_END"
+                        }
+                    ]
                 },
                 {
                     "id": "bf5a8596-1e95-4282-9b62-b354e86d1326",
