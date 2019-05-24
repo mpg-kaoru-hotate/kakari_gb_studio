@@ -77,6 +77,10 @@
         {
             "id": "15",
             "name": "sendPrescription"
+        },
+        {
+            "id": "16",
+            "name": "showFirstMessage"
         }
     ],
     "backgrounds": [
@@ -433,31 +437,6 @@
                         },
                         {
                             "id": "cc3ab540-da5f-4ade-9f87-7575cd7586d5",
-                            "command": "EVENT_END"
-                        }
-                    ]
-                },
-                {
-                    "id": "5eadc594-d498-43b4-9e0f-d7e83f03b30d",
-                    "x": 16,
-                    "y": 23,
-                    "width": 2,
-                    "height": 2,
-                    "trigger": "walk",
-                    "script": [
-                        {
-                            "id": "0e4b8403-de8a-403f-9958-aeee47633678",
-                            "command": "EVENT_SWITCH_SCENE",
-                            "args": {
-                                "sceneId": "3509d273-bf7e-4946-89ce-a489df5a449d",
-                                "x": 21,
-                                "y": 29,
-                                "direction": "up",
-                                "fadeSpeed": "2"
-                            }
-                        },
-                        {
-                            "id": "e5484326-9a98-4da4-8c1c-39c679483b41",
                             "command": "EVENT_END"
                         }
                     ]
@@ -976,7 +955,7 @@
             "id": "1b7f9ffd-2bbb-470b-9189-c2ac435d2a55",
             "name": "House",
             "backgroundId": "b340b9a2-2865-4e05-91c0-148846a693c8",
-            "x": 577.0559207221713,
+            "x": 576.6205922108189,
             "y": 75.03292340183953,
             "width": 20,
             "height": 18,
@@ -1183,6 +1162,61 @@
             ],
             "script": [
                 {
+                    "id": "19332ac7-3aa4-4bdb-a175-ca9a01c91a7e",
+                    "command": "EVENT_TEXT",
+                    "args": {
+                        "text": "House"
+                    }
+                },
+                {
+                    "id": "6d12b03b-e5a4-4a28-8127-d2228d062541",
+                    "command": "EVENT_IF_TRUE",
+                    "args": {
+                        "variable": "16"
+                    },
+                    "true": [
+                        {
+                            "id": "f07c934f-b36f-47de-b8bd-05e42d2c1738",
+                            "command": "EVENT_END"
+                        }
+                    ],
+                    "false": [
+                        {
+                            "id": "18264774-608f-49ce-93ca-2cc42ec4358c",
+                            "command": "EVENT_ACTOR_EMOTE",
+                            "args": {
+                                "actorId": "player",
+                                "emoteId": 0
+                            }
+                        },
+                        {
+                            "id": "c90eecd1-07b4-48bb-8d59-37b7e33f7a96",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": "ÊàÈÅøÌê\nÚø÷ÂÁïÕÁÉÂ"
+                            }
+                        },
+                        {
+                            "id": "575e3543-13ac-4dea-97d7-eb094b9ade88",
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": "Úø÷ÂÁïÙú\nÞÐØßÔßÅøíÏø¿ÏÔ"
+                            }
+                        },
+                        {
+                            "id": "eb827f4f-c407-4b66-8744-e5bbf7ece4c0",
+                            "command": "EVENT_SET_TRUE",
+                            "args": {
+                                "variable": "16"
+                            }
+                        },
+                        {
+                            "id": "f685427c-7f2f-4444-aa22-a33652f992f3",
+                            "command": "EVENT_END"
+                        }
+                    ]
+                },
+                {
                     "id": "d5a9cbaa-36b4-4a6d-af24-bf820e7d31bc",
                     "command": "EVENT_END"
                 }
@@ -1295,6 +1329,13 @@
                                         "y": 6,
                                         "direction": "down",
                                         "fadeSpeed": "1"
+                                    }
+                                },
+                                {
+                                    "id": "92e8bf05-a14b-4184-85fb-6d6d8852c699",
+                                    "command": "EVENT_SET_FALSE",
+                                    "args": {
+                                        "variable": "16"
                                     }
                                 },
                                 {
